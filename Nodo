@@ -1,0 +1,20 @@
+/**
+ * Ésta clase se encarga de crear el nodo izquierdo y el nodo derecho
+ * para el árbol.
+ * @author Mateo Hincapié Zapata, Marcos David Sierra Gallego.
+ * @version 2015/10/05.
+ */
+public class Nodo{
+    //se crea un dato de cualquier clase 
+    //se crean las referencias izquierda y derecha de el nodo raiz
+    public Nodo izq;
+    public Nodo der;
+    /**
+     * Este es el constructor de un nodo
+     */
+    public Nodo (){
+        izq = null;
+        der = null;
+        
+    } 
+}
