@@ -1,0 +1,93 @@
+import java.util.*;
+/**
+ * La clase Arbol se encarga de realizar los enfrentamientos donde se buscará llegar a un 
+ * campeón que será interpretado como la raíz del árbol binario.
+ * @author Mateo Hincapié Zapata, Marcos David Sierra Gallego.
+ * @version 2015/10/05.
+ */
+public class Arbol {
+    //se crea un nodo raiz
+    Nodo raiz;
+    Stack<Nodo> equipos = new Stack<Nodo>();
+   
+     /**
+     * Éste método recibe un Nodo de un equipo para agregarlo a la pila que tendrá 
+     * todos los equipos del torneo.
+     * @param Nodo
+     */
+    public void  agregarEquipo(Nodo n){
+       equipos.push(n);
+   }
+    
+//      /**
+//      * En este método se recibe un nodo 
+//      * @param Nodo n. Es el nodo con el cual se compara
+//      */
+//     public Equipo eliminatoria(Nodo n){
+//       if (n.izq == null && n.der == null)
+//          return n.equipo;
+//       else
+//         {
+//               Equipo equipoIzq = eliminatoria(n.izq);
+//               Equipo equipoDer = eliminatoria(n.der);
+//               if (n.der.equipo.puntaje >= n.izq.equipo.puntaje)
+//              {
+//                  n.equipo = equipoDer;
+//                  return equipoDer;
+//               }
+//               else
+//               {
+//                 n.equipo = equipoIzq;
+//                 return equipoIzq;
+//             }   
+//         }
+//    }
+   /**
+    * En el siguiente método se busca separar la pila en equipos de a dos, de tal modo que se puedan dar
+    * los partidos y así llegar hasta el campeón que será la raíz del árbol. Ésto se hace por medio de un while 
+    * que vacea la pila y la ingresa en dos Array.
+    */
+   public void partidos(){
+       Nodo izq = new Nodo();
+       Nodo der = new Nodo();
+       ArrayList<Nodo> arrIzq = new ArrayList<>();
+       ArrayList<Nodo> arrDer = new ArrayList<>();
+       while(!equipos.isEmpty()){
+            arrIzq.add(equipos.pop());
+            arrDer.add(equipos.pop());
+       }
+       for(int i=0; i< arrIzq.size();i++){
+           izq=arrIzq.get(i);
+           der=arrIzq.get(i+1);
+           enfrentamiento(izq,der);
+        }
+    }
+    
+    /**
+     * El método enfrentamientos recibe dos equipos y mira si no son null luego de eso llama al método 
+     * resultado donde se obtiene el ganador de ese partido.
+     * @param Nodo
+     * @param Nodo
+     * @return Nodo
+     */
+    public Nodo enfrentamiento(Nodo izq, Nodo der){
+        if(izq==null && der==null){
+            System.err.println("No hay equipos para enfrentarse");
+        }else{
+         
+        //return resultado();
+        
+       }
+       return null;
+    }
+    
+    /**
+     * El siguiente método recibe al ganador que será ingresado por
+     * el usuario del sistema.
+     * @param Nodo
+     * @return Nodo
+     */
+    public Nodo resultado(Nodo ganador){
+        return null;
+    }
+}
